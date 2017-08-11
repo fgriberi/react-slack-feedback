@@ -1,5 +1,5 @@
 {
-  "name": "@fgriberi/react-slack-feedback",
+  "name": "amarisearch-slack-feedback",
   "version": "1.1.2",
   "description": "React component for gathering user feedback to send to slack.",
   "main": "src/SlackFeedback.js",
