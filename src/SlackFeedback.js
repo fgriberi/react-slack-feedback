@@ -29,12 +29,12 @@ const defaultProps = {
   user: 'Unknown User',
   disabled: false,
   emoji: ':speaking_head_in_silhouette:',
-  buttonText: <span><SlackIcon/> Slack Feedback</span>,
+  buttonText: <span><SlackIcon/> Give Feedback</span>,
   disableImageUpload: false,
   imageUploadText: 'Attach Image',
   triggerStyles: {},
   contentStyles: {},
-  showChannel: true,
+  showChannel: false,
   title: <span><SlackIcon /> Send Feedback to Slack</span>
 
 };
@@ -358,7 +358,7 @@ class SlackFeedback extends Component {
 
             <div style={{ padding: '0.5em 0 1em' }}>
               <input id="sendURL" class="SlackFeedback--checkbox" type="checkbox" checked={sendURL} onChange={this.toggleSendURL} />
-              <label for="sendURL" class="SlackFeedback--checkbox-label">Send URL with Feedback</label>
+              <label for="sendURL" class="SlackFeedback--checkbox-label">Attach URL page with Feedback</label>
             </div>
 
             <button
