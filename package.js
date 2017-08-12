@@ -14,7 +14,7 @@ Npm.depends({
 Package.onUse(function(api) {
   api.versionsFrom('1.4.4');
   api.use('ecmascript');
-  api.addAssets('SlackFeedback.scss', 'client');
+  api.addAssets('SlackFeedback.css', 'client');
   api.addFiles('SlackIcon.js', 'client');
   api.mainModule('SlackFeedback.js', 'client');
 });
