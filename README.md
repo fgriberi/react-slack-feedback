@@ -1,16 +1,12 @@
 React Slack Feedback
 =====================
 
-React component for gathering user feedback to send to slack.
+Meteor package for gathering user feedback to send to slack.
 
-![image](http://res.cloudinary.com/di0xuztdq/image/upload/v1471245001/uehkqqfarpue7auonqol.gif)
-
-### Usage
-
-Install via NPM:
+## Install
 
 ```
-npm install react-slack-feedback --save
+meteor add fgriberi:react-slack-feedback
 ```
 
 To use the component, import it and render in your app's global component,
@@ -22,8 +18,10 @@ For this reason you must have a server which sends the request to slack.
 This component will produce the JSON object to send to Slack but it won't send
 the request for you.
 
+## How to use
+
 ```js
-import SlackFeedback from 'react-slack-feedback';
+import SlackFeedback from 'meteor/react-slack-feedback';
 
 <SlackFeedback
   // required
@@ -105,36 +103,5 @@ function uploadImage(image) {
 
 ___
 
-### Running Locally
 
-To run this module locally:
-
-1. Clone the repo:
-
-```bash
-git clone https://github.com/markmur/react-slack-feedback.git
-```
-
-2. Install the node modules
-
-```bash
-npm install
-```
-
-3. Create an ENV file with your `WEBHOOK_URL`
-
-`./env.js`
-```
-module.exports = {
-  WEBHOOK_URL: 'YOUR_SLACK_WEBHOOK_URL'
-};
-```
-
-4. Run the `Procfile` with `foreman`:
-
-```bash
-nf start
-```
-
-This will start the `webpack-dev-server` and an `express` backend server.
-The component will be available at http://localhost:3000
+For more information, please check [markmur/react-slack-feedback](https://github.com/markmur/react-slack-feedback)
