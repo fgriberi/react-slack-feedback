@@ -1,0 +1,341 @@
+#SlackFeedback {
+  position: fixed;
+  font-family: 'Proxima Nova', sans-serif;
+  z-index: 99999998;
+  bottom: 12px;
+  right: 0;
+  margin: 1em;
+}
+#SlackFeedback.active .SlackFeedback--container {
+  display: block;
+}
+#SlackFeedback #SlackIcon {
+  margin-right: 0.5em;
+}
+#SlackFeedback .SlackFeedback--loader {
+  margin: 50px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 7px solid rgba(255, 255, 255, 0.2);
+  border-right: 7px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 7px solid rgba(255, 255, 255, 0.2);
+  border-left: 7px solid white;
+  transform: translateZ(0);
+  animation: SlackFeedback-loader 0.5s infinite linear;
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+}
+#SlackFeedback .SlackFeedback--loader:after {
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+}
+@keyframes SlackFeedback-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#SlackFeedback .SlackFeedback--container {
+  display: none;
+  background: #f4f4f7;
+  position: relative;
+  z-index: 999999999;
+  border-radius: 4px;
+  margin-bottom: 1.5em;
+  width: 360px;
+  top: -2.5em;
+  right: 0;
+  box-shadow: 0 6px 30px 2px rgba(34, 44, 79, 0.3);
+}
+#SlackFeedback .SlackFeedback--header {
+  display: flex;
+  background: #222c4f;
+  padding: 0.75em 1em;
+  border-radius: 3px 3px 0 0;
+  font-size: 14px;
+  font-weight: 300;
+  align-items: center;
+  color: white;
+}
+#SlackFeedback .SlackFeedback--header > img {
+  margin-right: 0.5em;
+}
+#SlackFeedback .SlackFeedback--header > .close {
+  cursor: pointer;
+  opacity: 0.7;
+  margin-left: auto;
+  font-size: 11px;
+}
+#SlackFeedback .SlackFeedback--header > .close:hover {
+  opacity: 1;
+}
+#SlackFeedback .SlackFeedback--content {
+  padding: 0.5em;
+}
+#SlackFeedback .SlackFeedback--trigger {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  background: white;
+  color: #858ba0;
+  border: 1px solid #d0d8e1;
+  white-space: nowrap;
+  padding: 12px 1.25em;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 3px 12px 1px rgba(34, 44, 79, 0.1);
+  transition: box-shadow 0.3s, transform 0.2s ease-in, color 0.2s;
+}
+#SlackFeedback .SlackFeedback--trigger:hover, #SlackFeedback .SlackFeedback--trigger.active {
+  box-shadow: 0 6px 16px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  color: #5d606c;
+  border-color: #b1becd;
+}
+#SlackFeedback .SlackFeedback--trigger img {
+  margin-right: 8px;
+}
+#SlackFeedback ul.SlackFeedback--tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1em;
+}
+#SlackFeedback ul.SlackFeedback--tabs > li {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.6);
+  color: #5d606c;
+  text-align: center;
+  padding: 0.75em;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #d0d8e1;
+}
+#SlackFeedback ul.SlackFeedback--tabs > li.selected {
+  border-color: #08f;
+  background: white;
+  color: #08f;
+  position: relative;
+  text-shadow: 0 1px 6px rgba(0, 136, 255, 0.1);
+  box-shadow: 0 0 8px rgba(0, 136, 255, 0.2);
+}
+#SlackFeedback ul.SlackFeedback--tabs > li:hover:not(.selected) {
+  border: 1px solid #b7c3d1;
+}
+#SlackFeedback ul.SlackFeedback--tabs > li:first-of-type {
+  border-radius: 4px 0 0 4px;
+  margin-right: -1px;
+}
+#SlackFeedback ul.SlackFeedback--tabs > li:last-of-type {
+  border-radius: 0 4px 4px 0;
+  margin-left: -1px;
+}
+#SlackFeedback .SlackFeedback-image-upload .SlackFeedback-image-upload-button {
+  border: 1px solid #d0d8e1;
+  padding: 0.75em 3em;
+  text-align: center;
+  font-size: 13px;
+  margin: auto;
+  width: 100%;
+  display: table;
+  color: #777d95;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+#SlackFeedback .SlackFeedback-image-upload .SlackFeedback-image-upload-button:hover {
+  border: 1px solid #bac6d3;
+  background: rgba(255, 255, 255, 0.6);
+  color: #777d95;
+}
+#SlackFeedback .SlackFeedback-image-upload > input {
+  display: none;
+}
+#SlackFeedback .SlackFeedback--input {
+  margin-bottom: 0.75em;
+  color: #858ba0;
+}
+#SlackFeedback .border-box, #SlackFeedback .SlackFeedback--trigger, #SlackFeedback .SlackFeedback-image-upload .SlackFeedback-image-upload-button, #SlackFeedback .SlackFeedback--textarea,
+#SlackFeedback .SlackFeedback--input, #SlackFeedback .SlackFeedback--image-preview {
+  box-sizing: border-box;
+}
+#SlackFeedback .resets, #SlackFeedback .SlackFeedback--textarea,
+#SlackFeedback .SlackFeedback--checkbox,
+#SlackFeedback .SlackFeedback--input {
+  box-shadow: none;
+  color: inherit;
+  margin: inherit;
+  padding: inherit;
+}
+#SlackFeedback .SlackFeedback--textarea,
+#SlackFeedback .SlackFeedback--input {
+  width: 100%;
+  color: #444 !important;
+  border: 1px solid #d0d8e1 !important;
+  border-radius: 3px;
+  padding: 0.5em;
+  outline: none;
+  font-size: 14px;
+  background: white !important;
+  margin-bottom: 0.5em;
+}
+#SlackFeedback .SlackFeedback--textarea:focus,
+#SlackFeedback .SlackFeedback--input:focus {
+  border: 1px solid #0088ff !important;
+  box-shadow: 0 0 8px rgba(0, 136, 255, 0.3) !important;
+}
+#SlackFeedback .SlackFeedback--textarea[disabled], #SlackFeedback .SlackFeedback--textarea.disabled,
+#SlackFeedback .SlackFeedback--input[disabled],
+#SlackFeedback .SlackFeedback--input.disabled {
+  opacity: 0.8 !important;
+  pointer-events: none;
+  color: #636a7f;
+}
+#SlackFeedback .SlackFeedback--textarea {
+  min-height: 150px;
+}
+#SlackFeedback .SlackFeedback--label {
+  color: #0088ff;
+  display: block;
+  font-size: 11px;
+  margin: 5px 0;
+}
+#SlackFeedback .SlackFeedback--checkbox {
+  appearance: checkbox !important;
+  position: static !important;
+  font-size: 1.1em !important;
+}
+#SlackFeedback .SlackFeedback--checkbox::before, #SlackFeedback .SlackFeedback--checkbox::after {
+  content: none !important;
+}
+#SlackFeedback .SlackFeedback--checkbox-label {
+  display: inline-block !important;
+  margin-left: 10px !important;
+  color: inherit;
+  font-size: 13px;
+  color: #858ba0;
+  cursor: pointer;
+}
+#SlackFeedback .SlackFeedback--checkbox-label:hover {
+  color: #777d95;
+}
+#SlackFeedback .SlackFeedback--image-preview {
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  width: 100%;
+  height: 140px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  border: 1px solid #d0d8e1;
+}
+#SlackFeedback .SlackFeedback--image-preview:hover .SlackFeedback--preview-overlay {
+  opacity: 1;
+}
+#SlackFeedback .SlackFeedback--image-preview .SlackFeedback--preview-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: rgba(34, 44, 79, 0.4);
+  opacity: 0;
+}
+#SlackFeedback .SlackFeedback--image-preview .SlackFeedback--preview-overlay span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  background: rgba(34, 44, 79, 0.6);
+  transition: background 0.15s;
+}
+#SlackFeedback .SlackFeedback--image-preview .SlackFeedback--preview-overlay span:hover {
+  background: #0088ff;
+}
+#SlackFeedback .Select {
+  margin-bottom: 0.5em;
+}
+#SlackFeedback .Select .Select-control {
+  border: 1px solid #d0d8e1;
+}
+#SlackFeedback button.submit {
+  display: block !important;
+  width: 100% !important;
+  padding: 1em 0.75em !important;
+  text-align: center !important;
+  background: #0088ff !important;
+  color: white !important;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+#SlackFeedback button.submit[disabled], #SlackFeedback button.submit.disabled {
+  pointer-events: none !important;
+  opacity: 0.4 !important;
+}
+#SlackFeedback button.submit.sent {
+  background: #3dc86f !important;
+  pointer-events: none;
+}
+#SlackFeedback button.submit.error {
+  background: #ec3c3c !important;
+  pointer-events: none;
+}
+#SlackFeedback button.submit:hover {
+  background: #2499ff;
+  box-shadow: 0 2px 8px 2px rgba(0, 136, 255, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInUp {
+  animation: fadeInUp 0.4s ease;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    display: none;
+    transform: translate3d(0, 10%, 0);
+  }
+}
+.fadeOutDown {
+  animation: fadeOutDown 0.4s ease;
+  animation-fill-mode: both;
+}
