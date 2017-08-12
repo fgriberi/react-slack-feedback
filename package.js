@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'react-slack-feedback',
+  name: 'fgriberi:react-slack-feedback',
   version: '1.0.0',
   summary: 'Meteor package for gathering user feedback to send to slack.',
   git: 'https://github.com/fgriberi/react-slack-feedback',
