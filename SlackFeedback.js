@@ -64,7 +64,6 @@ class SlackFeedback extends React.Component {
     this.removeImage = this.removeImage.bind(this);
     this.toggle = this.toggle.bind(this);
     this.send = this.send.bind(this);
-    this.toggleSendURL = this.toggleSendURL.bind(this);
     this.selectType = this.selectType.bind(this);
     this.close = this.close.bind(this);
   }
@@ -100,12 +99,6 @@ class SlackFeedback extends React.Component {
     });
 
     document.removeEventListener('click', this.handleClickOutside.bind(this));
-  }
-
-  toggleSendURL() {
-    this.setState({
-      sendURL: !this.state.sendURL
-    });
   }
 
   selectType(e) {
@@ -355,11 +348,6 @@ class SlackFeedback extends React.Component {
 
             {/* Only render the image upload if there's callback available  */}
             {this.props.onImageUpload ? this.renderImageUpload() : null}
-
-            <div style={{ padding: '0.5em 0 1em' }}>
-              <input id="sendURL" className="SlackFeedback--checkbox" type="checkbox" checked={sendURL} onChange={this.toggleSendURL} />
-              <label htmlFor="sendURL" className="SlackFeedback--checkbox-label">Attach URL page with Feedback</label>
-            </div>
 
             <button
               className={classNames('submit', { sent, error, disabled: sending || uploadingImage })}
